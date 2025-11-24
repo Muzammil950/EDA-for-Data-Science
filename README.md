@@ -42,6 +42,15 @@ This repository contains complete Exploratory Data Analysis (EDA) projects using
 ✅ Outlier Detection  
 ✅ Data Cleaning  
 
+## 🔹 Libraries & Modules Used
+
+- **Python 3.x**
+- **Pandas** – Data handling & manipulation
+- **NumPy** – Numerical computing
+- **Matplotlib** – Data visualization
+- **Seaborn** – Statistical visualization
+- **Scikit-learn** – Correlation & preprocessing
+- **Jupyter Notebook** – Interactive analysis
 
 ---
 
