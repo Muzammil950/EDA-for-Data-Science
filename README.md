@@ -54,37 +54,37 @@ This repository contains complete Exploratory Data Analysis (EDA) projects using
 
 ---
 
-# 01_data_overview.ipynb - Data Overview (copy-paste)
+# EDA - Data Overview
 
 import pandas as pd
 import numpy as np
-from IPython.display import display, HTML
+import matplotlib.pyplot as plt
+import seaborn as sns
 
-# 1. Load dataset
-csv_path = "data/raw/dataset.csv"
-df = pd.read_csv(csv_path)
+# Load dataset
+df = pd.read_csv("data/raw/dataset.csv")
 
-# 2. Basic preview
-print("Shape:", df.shape)
-display(df.head(10))
+# First look
+df.head()
 
-# 3. Basic info & stats
-print("\n--- Info ---")
-display(df.info())
-print("\n--- Describe ---")
-display(df.describe(include='all').transpose())
+# Basic information
+df.info()
 
-# 4. Missing values
-print("\nMissing values per column:")
-display(df.isnull().sum())
+# Statistical summary
+df.describe()
 
-# 5. Save a small HTML preview (optional)
-preview_html = df.head(20).to_html(index=False)
-with open("reports/dataset_preview.html", "w", encoding="utf-8") as f:
-    f.write("<h3>Dataset Preview (first 20 rows)</h3>\n")
-    f.write(preview_html)
+# Check missing values
+df.isnull().sum()
 
-print("\nSaved HTML preview: reports/dataset_preview.html")
+# Check duplicate rows
+df.duplicated().sum()
+
+# Visualize missing values
+plt.figure(figsize=(10,6))
+sns.heatmap(df.isnull(), cbar=False)
+plt.title("Missing Values Heatmap")
+plt.show()
+
 
 
 
