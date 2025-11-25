@@ -54,6 +54,40 @@ This repository contains complete Exploratory Data Analysis (EDA) projects using
 
 ---
 
+# 01_data_overview.ipynb - Data Overview (copy-paste)
+
+import pandas as pd
+import numpy as np
+from IPython.display import display, HTML
+
+# 1. Load dataset
+csv_path = "data/raw/dataset.csv"
+df = pd.read_csv(csv_path)
+
+# 2. Basic preview
+print("Shape:", df.shape)
+display(df.head(10))
+
+# 3. Basic info & stats
+print("\n--- Info ---")
+display(df.info())
+print("\n--- Describe ---")
+display(df.describe(include='all').transpose())
+
+# 4. Missing values
+print("\nMissing values per column:")
+display(df.isnull().sum())
+
+# 5. Save a small HTML preview (optional)
+preview_html = df.head(20).to_html(index=False)
+with open("reports/dataset_preview.html", "w", encoding="utf-8") as f:
+    f.write("<h3>Dataset Preview (first 20 rows)</h3>\n")
+    f.write(preview_html)
+
+print("\nSaved HTML preview: reports/dataset_preview.html")
+
+
+
 ## 📌 About Me
 I am an AI & Data Science student working on real-world data analysis projects to improve my skills in EDA and Machine Learning.
 
