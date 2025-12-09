@@ -54,32 +54,32 @@ This repository contains complete Exploratory Data Analysis (EDA) projects using
 
 ---
 
-# EDA - Data Overview
+## EDA - Data Overview
 
 import pandas as pd
 import numpy as np
 import matplotlib.pyplot as plt
 import seaborn as sns
 
-# Load dataset
+## Load dataset
 df = pd.read_csv("data/raw/dataset.csv")
 
 # First look
 df.head()
 
-# Basic information
+## Basic information
 df.info()
 
-# Statistical summary
+## Statistical summary
 df.describe()
 
-# Check missing values
+## Check missing values
 df.isnull().sum()
 
-# Check duplicate rows
+## Check duplicate rows
 df.duplicated().sum()
 
-# Visualize missing values
+## Visualize missing values
 plt.figure(figsize=(10,6))
 sns.heatmap(df.isnull(), cbar=False)
 plt.title("Missing Values Heatmap")
