@@ -64,7 +64,7 @@ import seaborn as sns
 ## Load dataset
 df = pd.read_csv("data/raw/dataset.csv")
 
-# First look
+## First look
 df.head()
 
 ## Basic information
